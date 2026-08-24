@@ -29,12 +29,13 @@ flowchart LR
 
 ## Repository contents
 
-| Folder | Contents |
+| Path | Contents |
 | --- | --- |
 | `Modules/` | 4 lecture decks — the conceptual backbone |
 | `Labs/` | 8 hands-on lab guides — one or two per module |
+| **[`REFERENCES.md`](REFERENCES.md)** | Reference links, self-check questions, and memes |
 
-All material ships as PDF. To read a file from the terminal:
+The course material ships as PDF. To read a file from the terminal:
 
 ```bash
 pdftotext "Labs/Lab 1.1 — Introduction to OpenCode and Autonomous Loops.pdf" - | less
@@ -544,6 +545,8 @@ rm -rf opencode-intro-lab opencode-multi-model-lab opencode-pacs-lab \
 ---
 
 ## Recommended pre-reading
+
+> Looking for more? **[REFERENCES.md](REFERENCES.md)** collects the foundational papers, tool docs, and the best free Substack writing on loop engineering — plus self-check questions for every module.
 
 **[Loop Engineering 101](https://himanshuramchandani.substack.com/p/loop-engineering-101)** — Himanshu Ramchandani, *HIM*, 23 August 2026.
 
