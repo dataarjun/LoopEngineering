@@ -4,8 +4,6 @@ Building autonomous, self-correcting agentic loops with the **OpenCode CLI** on 
 
 The course moves from single-turn prompting to production-grade loop systems: how a loop is structured (PACS), how it is bounded (stop rules, circuit breakers, budgets), how it stays coherent over long runs (state externalization, context pruning, Reflexion), and how loops compose into multi-agent topologies with human gates.
 
-> _Copyright © 2026 DataCouch Pvt. Ltd. All rights reserved._
-
 ```mermaid
 flowchart LR
     subgraph D1["DAY 1 — make it safe and bounded"]
