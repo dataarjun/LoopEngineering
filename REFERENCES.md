@@ -22,6 +22,31 @@ Every link below was checked and resolves. If one rots, note it rather than dele
 | **[Reflexion: Language Agents with Verbal Reinforcement Learning](https://arxiv.org/abs/2303.11366)** — Shinn, Cassano, Berman, Gopinath, Narasimhan, Yao (2023) | The source of Lab 3.2. Agents keep reflective text in an episodic memory buffer instead of updating weights — which is exactly what `REFLEXION.md` is doing. |
 | **[Lost in the Middle: How Language Models Use Long Contexts](https://arxiv.org/abs/2307.03172)** — Liu, Lin, Hewitt, Paranjape, Bevilacqua, Petroni, Liang (2023) | The empirical basis for Module 3's first degradation mode. Performance peaks when relevant information sits at the start or end of context and drops sharply in the middle. |
 
+### The origin document
+
+**[Ralph Wiggum as a "software engineer"](https://ghuntley.com/ralph/)** — Geoffrey Huntley · 14 Jul 2025
+
+Read this first. Everything else in this document is downstream of it — Orosz traces the term back here, xr0am critiques it, the Codacy interview is Huntley explaining it. It predates the rest by roughly a year.
+
+The entire technique is one line:
+
+```bash
+while :; do cat PROMPT.md | claude-code ; done
+```
+
+Four files carry the state: `PROMPT.md` (fed in every iteration), `@fix_plan.md` (prioritised remaining work), `@specs/*` (technical specs), `@AGENT.md` (how to compile and run). Huntley's rules — one item per loop to protect the context window, deterministic stack allocation, parallel subagents for search but serialised validation, never assume something isn't implemented already — are Module 3's lessons discovered empirically, before they had names.
+
+**Read it as the thesis this course is the answer to.** Note what the loop does *not* have: a verifiable stop rule. `while :` never terminates on its own, and Huntley is candid about the consequences — you *"will wake up to a broken code base"* and choose between fixing it by hand or `git reset --hard`. His own framing is the best line in the literature:
+
+> *"That's the beauty of Ralph — the technique is deterministically bad in an undeterministic world."*
+
+Two caveats he states plainly, both worth raising in class:
+
+- ***"There is no way this is possible without senior expertise guiding Ralph."*** The technique does not remove judgement, it relocates it — which is Derosiaux's argument arrived at a year earlier.
+- ***"There's no way in heck would I use Ralph in an existing code base."*** Ralph targets greenfield work at ~90% completion. **This is the sharpest contrast with the course**, whose labs run loops against existing code precisely *because* they add the deterministic Check phase Ralph lacks. Ralph is the loop without a control plane; Modules 2–4 are the control plane.
+
+He also reports completing a $50,000 contract for $297 in inference — the number that put the technique on everyone's radar, and one worth interrogating rather than repeating.
+
 ### Practitioner writing
 
 | Article | Why it matters here |
@@ -99,7 +124,7 @@ A recurring quote across several of these, from Boris Cherny (Claude Code, Anthr
 
 | Video | Length | Why it's worth your time |
 | --- | --- | --- |
-| **[AI Giants: Interview with Geoffrey Huntley, Creator of the /ralph-loop](https://www.youtube.com/watch?v=ZBkRBs4O1VM)** — Codacy · 14 Jan 2026 | 68 min | The primary source, from the person who started it. *"Ralph is a Bash loop"* — five words that reframed how the field thinks about agentic coding. Chapters worth jumping to even if you skip the rest: **What is the Ralph loop** (2:11), **Ralph in Reverse** (9:18), **Overcomplicated Tools** (15:34), and **Failure as Feature** (18:12) — the last being the clearest statement anywhere of why loops tolerate individual failures that would sink a linear pipeline. Huntley's own write-up lives at [ghuntley.com/ralph](https://ghuntley.com/ralph/). |
+| **[AI Giants: Interview with Geoffrey Huntley, Creator of the /ralph-loop](https://www.youtube.com/watch?v=ZBkRBs4O1VM)** — Codacy · 14 Jan 2026 | 68 min | The primary source, from the person who started it. *"Ralph is a Bash loop"* — five words that reframed how the field thinks about agentic coding. Chapters worth jumping to even if you skip the rest: **What is the Ralph loop** (2:11), **Ralph in Reverse** (9:18), **Overcomplicated Tools** (15:34), and **Failure as Feature** (18:12) — the last being the clearest statement anywhere of why loops tolerate individual failures that would sink a linear pipeline. Pairs with [the origin document](#the-origin-document) above. |
 
 ### ➕ Add yours — videos, talks, and courses
 
