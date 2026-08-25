@@ -50,6 +50,8 @@ The term went mainstream in mid-2026 and Substack is where most of the practitio
 | **[Loop Engineering: When Generation Gets Cheap, Judgment Gets Expensive](https://sderosiaux.substack.com/p/loop-engineering-cheap-generation)** | Stephane Derosiaux, *The Technical Executive* · 25 Jun 2026 | The single best companion to **Lab 4.1**. Argues the bottleneck has moved from generating output to judging it, and that agents cannot self-evaluate because "the context in which the code was written is already stuffed with the reasons it was written that way." His prescription — an independent evaluator that knows only the goal and constraints and *defaults to doubt* — is precisely the evaluator agent you build. |
 | **[Loop Engineering](https://cobusgreyling.substack.com/p/loop-engineering)** | Cobus Greyling · 9 Jun 2026 | The best structural overview. Six components: scheduling, worktrees, persistent skills, connectors/MCP, sub-agents as maker/checker, and durable state — four of which are Day 2 labs. Balances the enthusiasm with the warning that unattended loops make unattended mistakes. |
 | **[Harness, Graph, and Loop Engineering — How to Evolve From Prompts and Context](https://sarthakai.substack.com/p/harness-graph-and-loop-engineering)** | Sarthak Rastogi, *AI Agent Engineering* · 4 Aug 2026 | Extends **Module 1**'s three eras into five cumulative layers: prompt → context → harness → loop → graph. The key correction to most writing on this: the layers are cumulative, not replacements, and most production systems genuinely only need the lower ones. |
+| **[What is "Loop Engineering?"](https://newsletter.pragmaticengineer.com/p/what-is-loop-engineering)** 🔒 | Gergely Orosz, *The Pragmatic Engineer* · 14 Jul 2026 | The mainstream framing, from the industry's most-read engineering newsletter. Traces the practice back to Geoffrey Huntley's Ralph loop and documents how `/goal` shipped across Codex, Hermes, and Claude Code by May 2026. **Paywalled** — the free portion covers the origin and tooling; the sections on cost, disappointment with looping, and whether context engineering matters more are behind the subscription. |
+| **[What Ralph Wiggum Loops Are Missing (And When It Starts to Matter)](https://xr0am.substack.com/p/what-ralph-wiggum-loops-are-missing)** | xr0am, *Orchestrated Code* · 24 Jan 2026 | The counterweight to the hype, and the closest external writing to **Lab 4.2**. Argues Ralph is fine for simple projects but lacks dependency tracking, multi-agent coordination, complexity-based task breakdown, and permission-tiered tool access. Written from shipping two products this way: *"without proper task sequencing, agents kept stepping on each other"* — which is the worktree isolation argument, learned in production. |
 | **[Designing Loops — A Practitioner's Short Field Guide](https://interestingengineering.substack.com/p/designing-loops-a-practitioners-short)** | *Interesting Engineering++* · 11 Jun 2026 | The most rigorous piece here. Reconstructs how six practitioners (Cherny, Huntley, Yegge, Steinberger, Osmani, Karpathy) independently converged on the same loop architecture, and names the artifacts: a Loop Contract, `VISION.md`, `PROMPT.md`, a separate Judge Prompt. Includes benchmark data and an honest section on comprehension debt and reward hacking. |
 | **[Loop Engineering is Agent Lite](https://cobusgreyling.substack.com/p/loop-engineering-is-agent-lite)** | Cobus Greyling · 28 Jul 2026 | The contrarian read, and worth taking seriously. Loops as "highly intelligent cron jobs" — less risky and more sustainable than full agent frameworks, because "full autonomous agents promise to run forever on their own. Reality is messier than that." |
 | **[Harness Engineering and Agentic Loops: How to Explain an AI Agent to Your Mum](https://humanandthemachine.substack.com/p/harness-engineering-and-agentic-loops)** | Cien Solon, *Human and The Machine* · 28 Jun 2026 | Jargon-free explainer. Useful when you need to explain to a stakeholder why this work matters without saying "orchestrator-worker topology." |
@@ -57,7 +59,7 @@ The term went mainstream in mid-2026 and Substack is where most of the practitio
 
 A recurring quote across several of these, from Boris Cherny (Claude Code, Anthropic): *"I don't prompt Claude anymore. I have loops running that prompt Claude. My job is to write loops."* That is the course thesis, stated by someone shipping it.
 
-> **Note on paywalls:** several widely-shared loop-engineering posts put the substance behind a subscription. Those are deliberately excluded — everything above is readable in full for free.
+> **Paywalls:** entries marked 🔒 put some or all of the substance behind a subscription. Everything unmarked is readable in full for free.
 
 ### ➕ Add yours — blogs and articles
 
@@ -66,6 +68,12 @@ A recurring quote across several of these, from Boris Cherny (Claude Code, Anthr
 | Link | Why it matters |
 | --- | --- |
 |  |  |
+
+### Talks and videos
+
+| Video | Length | Why it's worth your time |
+| --- | --- | --- |
+| **[AI Giants: Interview with Geoffrey Huntley, Creator of the /ralph-loop](https://www.youtube.com/watch?v=ZBkRBs4O1VM)** — Codacy · 14 Jan 2026 | 68 min | The primary source, from the person who started it. *"Ralph is a Bash loop"* — five words that reframed how the field thinks about agentic coding. Chapters worth jumping to even if you skip the rest: **What is the Ralph loop** (2:11), **Ralph in Reverse** (9:18), **Overcomplicated Tools** (15:34), and **Failure as Feature** (18:12) — the last being the clearest statement anywhere of why loops tolerate individual failures that would sink a linear pipeline. Huntley's own write-up lives at [ghuntley.com/ralph](https://ghuntley.com/ralph/). |
 
 ### ➕ Add yours — videos, talks, and courses
 
