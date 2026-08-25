@@ -29,6 +29,32 @@ Every link below was checked and resolves. If one rots, note it rather than dele
 | **[Building Effective AI Agents](https://www.anthropic.com/engineering/building-effective-agents)** — Anthropic Engineering, 19 Dec 2024 | The closest thing to a canonical pattern catalogue. Covers prompt chaining, routing, parallelization, **orchestrator-workers**, and **evaluator-optimizer** — the last two map directly onto Labs 4.1 and 4.2. |
 | **[Loop Engineering 101](https://himanshuramchandani.substack.com/p/loop-engineering-101)** — Himanshu Ramchandani, 23 Aug 2026 | Short primer covering the same ground as Modules 1–2 from an independent angle. Recommended the evening before Day 1. Its `checker.verify` framing is Lab 2.1's stop rule in miniature. |
 
+### Interactive frameworks
+
+**[Loop Engineering](https://cobusgreyling.github.io/loop-engineering/)** — Cobus Greyling · MIT-licensed, free, open source
+
+[![Loop Engineering — Stop prompting. Design the loop. Get a score.](assets/loop-engineering-site.png)](https://cobusgreyling.github.io/loop-engineering/)
+
+A tool-agnostic framework for the exact discipline this course teaches, and the most directly usable resource in this document — you can run it against your own repo today:
+
+```bash
+npx @cobusgreyling/loop init .
+npx @cobusgreyling/loop doctor .
+```
+
+Where it lines up with the labs:
+
+| What it ships | Course equivalent |
+| --- | --- |
+| Five primitives — scheduling, worktrees, skills, connectors, sub-agents | Module 4, Labs 4.1–4.2 |
+| Maker/checker agent split | The generator/evaluator pair in Lab 4.1 |
+| Durable state via `STATE.md` | Lab 3.1, same file name and same reasoning |
+| Token budgets and cost observability | Lab 2.2 |
+| Human gates and kill switches | The HITL gate in Lab 4.1 |
+| Three autonomy levels — L1 report-only → L3 unattended | The course's implicit progression, made explicit |
+
+It also carries a **failure-modes catalogue** and a `loop-audit` command that scores a repo 0–100 on loop readiness — a useful way to check whether Day 2's lessons actually landed. The reference implementation runs loops on itself and publishes live telemetry, which is a rare thing to be able to inspect.
+
 ### Tool documentation
 
 | Resource | Use it for |
