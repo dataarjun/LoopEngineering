@@ -1,4 +1,4 @@
-# References, Materials, and Questions
+# Updated: References, Materials, and Questions
 
 Companion to the [course roadmap](README.md). Three things live here:
 
